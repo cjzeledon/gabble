@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>
+    Gabbit! - Create An Account
+  </title>
+  <link rel="stylesheet" type="text/css" href="/styles.css">
+</head>
+<body>
+
+  {{> navigation }}
+
+  <h1>Ready to Become a Member of Gabbit?</h1>
+
+  <form method="POST" action="/form_register" id="form_signup">
+    <p><input type="text" name="form_register_Name" placeholder="Create Username"></input></p>
+    <p><input type="text" name="form_register_Password" placeholder="Create Password"></input></p>
+    <!-- <p><input type="text" name="formConfirmPassword" placeholder="Confirm Your Password"></input></p> -->
+    <p><input type="text" name="form_register_Avatar" placeholder="Pick an avatar"></input></p>
+    <p><input type="submit" value="Create Account"></input></p>
+  </form>
+
+
+</body>
+</html>

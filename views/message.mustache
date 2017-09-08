@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      Gabbit! - Create New Gabble
+    </title>
+    <link rel="stylesheet" type="text/css" href="/styles.css">
+  </head>
+  <body>
+
+  {{> navigation }}
+
+    <h1>Drop That Gabbit!</h1>
+
+    <form method="POST" action="/form_message" id="form_newMessage">
+      <p><textarea rows="5" cols="50" name="form_new_Message"></textarea></p>
+      <p><input type="submit" value="Post New Message"></p>
+    </form>
+
+  </body>
+</html>

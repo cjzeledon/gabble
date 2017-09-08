@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>
+    Gabbit! - What's Trending Now?
+  </title>
+  <link rel="stylesheet" type="text/css" href="/styles.css">
+</head>
+<body>
+
+  {{> navigation }}
+
+  <h1>What Are You Going to Gabble About?</h1>
+
+  {{ #whatsTrending }}
+    <p>{{ gabMessage }}</p>
+  {{ /whatsTrending }}
+
+  <form method="GET" action="/trending">
+  </form>
+
+</body>
+</html>

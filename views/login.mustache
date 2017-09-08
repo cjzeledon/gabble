@@ -2,24 +2,21 @@
 <html>
   <head>
     <title>
-      Gabbit! - Homepage
+      Gabbit! - Log In
     </title>
     <link rel="stylesheet" type="text/css" href="/styles.css">
   </head>
 
   <body>
-    <header>
-      <a href="./homepage">Gabbit</a>
-      <a href="./creategab">Create A New Gab</a>
-      <a href="./login">Log In</a>
-      <a href="./signup">Sign Up</a>
-    </header>
 
-    <h1>Ready to Become a Member of Gabbit?</h1>
+    {{> navigation }}
 
-    <form method="POST" action="/login">
-      <input type="text" name="formName" placeholder="Username"></input>
-      <input type="text" name="formPassword" placeholder="Password"></input>
+    <h1>Sign In</h1>
+
+    <form method="POST" action="/form_login" id="form_login">
+      <p><input type="text" name="form_login_Name" placeholder="Username"></input></p>
+      <p><input type="text" name="form_login_Password" placeholder="Password"></input></p>
+      <p><input type="submit" value="Log In"></input></p>
     </form>
 
 
