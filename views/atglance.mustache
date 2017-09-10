@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>
+    Gabbit! - Viewing A Gabble At Glance
+  </title>
+  <link rel="stylesheet" type="text/css" href="/styles.css">
+</head>
+<body>
+
+  {{> navigation }}
+
+  <p>Hello {{littlefoot.userName}}</p>
+
+  <h1>Oh, What the Gabble?!</h1>
+
+   <p>{{ #glanceTrending}}
+     {{ message.gabMessage }}
+   {{ /glanceTrending }}</p>
+
+   <p>{{ #glanceTrending}}
+     {{ message.createdAt }}
+   {{ /glanceTrending }}</p>
+
+   <p>Liked By:</p>
+   {{ #glanceTrending}}
+     <p>{{ user.userName }}</p>
+   {{ /glanceTrending }}
+
+
+</body>
+</html>
+
+<!--
+  1. When clicking on a link message to see who liked that message, it renders no information. Why?
+
+  2. When two or three more people likes that linked message, it renders that message two or three more times and shows the list of people who liked that people (singlely). Why?
+ -->

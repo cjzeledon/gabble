@@ -12,14 +12,14 @@ const User = db.define('user', {
   userAvatar: Sequelize.STRING,
 });
 
-User.sync().then(function(){
+User.sync().then(function() {
   console.log('User Gabblic-n-Sync!');
   // Person.create(
   //   { userName: 'Dany', userPassword: 'motherofdragons', userAvatar:'https://avatarfiles.alphacoders.com/105/105157.jpg' }
   // );
 });
 
-function findUser(username, password){
+function findUser(username, password) {
   return User.findOne({
     where: {
       userName: username,
@@ -28,21 +28,15 @@ function findUser(username, password){
   });
 };
 
-function registerUser(name, pass, avatar){
+function registerUser(name, pass, avatar) {
   return User.create({
-      userName: name,
-      userPassword: pass,
-      userAvatar: avatar,
+    userName: name,
+    userPassword: pass,
+    userAvatar: avatar,
   });
 };
 
-// module.exports = an object that has all your functions
-// {
-// findUsers: findUsers,
-// deleteUsers: deleteUsers
-// }
-
-module.exports = {
+module.exports = { // This is an object that has all your functions so that can be called out
   User: User,
   findUser: findUser,
   registerUser: registerUser,

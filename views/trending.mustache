@@ -10,14 +10,20 @@
 
   {{> navigation }}
 
-  <h1>What Are You Going to Gabble About?</h1>
+  <p>Hello {{bigfoot.userName}}, check out the latest gabbit!</p>
+
+  <h1>The Hottest Gabble Ever..!</h1>
 
   {{ #whatsTrending }}
-    <p>{{ gabMessage }}</p>
+  <section>
+  <strong>{{ user.userName }}:</strong><a href="/atglance/?id={{ id }}">{{ gabMessage }}</a>
+  <form method="POST" action="/likes/{{ id }}">
+    <input type="submit" value="Like" class="likeButton">
+  </form>
+</section>
+
   {{ /whatsTrending }}
 
-  <form method="GET" action="/trending">
-  </form>
 
 </body>
 </html>

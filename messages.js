@@ -14,30 +14,57 @@ const Message = db.define('message', {
 
 Message.belongsTo(User);
 
-Message.sync().then(function(){
+Message.sync().then(function() {
   console.log('Message Gabblic-n-Sync!');
-
-  // Message.create(
-  //   { userName: 'Dany', userPassword: 'motherofdragons', userAvatar:'https://avatarfiles.alphacoders.com/105/105157.jpg' }
-  // );
-  //
-  // Person.create(
-  //   { userName: 'Jon', userPassword: 'whitewolf', userAvatar:'https://avatarfiles.alphacoders.com/103/103053.jpg' }
-  // );
-
 });
 
-function createMessage(newMessage){
-  return Message.create({
-    gabMessage: newMessage,
+// In my mind you shouldn't have to retrieve the user again (not
+// sure why you do). BUT we have the user id so its pretty easy
+// to do.
+function createMessage(newMessage, user) {
+  return User.findOne({
+    where: {
+      id: user.id
+    }
+  }).then(function (who) {
+      return Message.create({
+        gabMessage: newMessage,
+      }).then(function(message) {
+        message.setUser(who); // sender is a user object
+      });
+    })
+};
+
+// This code works well as it is. Compiles only messages. No users can be displayed.
+// function trendingMessage() {
+//   return Message.findAll()
+// };
+
+// function atglanceMessage(){
+//   return Message.findOne({
+//     include: [ User ],
+//     include: [ Like]
+//   })
+// }
+
+function trendingMessage() {
+  return Message.findAll({
+    include: [ User ]
   })
 };
 
-function trendingMessage(){
-  return Message.findAll()
-};
+// This is a pretty neat code to see how it works. It seemed to have pulled BOTH tables in json format. Now...how can I translate that into the browser?
+// function trendingMessage() {
+//   return Message.findAll({
+//     include: [ User ]
+//   })
+//   .then (users => {s
+//     console.log(JSON.stringify(users))
+//   })
+// };
 
 module.exports = {
+  Message: Message,
   createMessage: createMessage,
   trendingMessage: trendingMessage,
 };

@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css?family=Love+Ya+Like+A+Sister');
+
+body{
+  background-color: white;
+}
+
+header{
+  background-color: #B0C4DE;
+  padding: 10px;
+  border-radius: 10px;
+  text-align: center;
+  font-family: sans-serif, serif;
+  font-size: smaller;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+header input[type=submit], button {
+  background-color: #4682B4;
+  border: 1px solid #4682B4;
+  border-radius: 8px;
+  color: white;
+}
+
+header > a{
+  color: #eaeeed;
+}
+
+h1{
+  font-family: 'Love Ya Like A Sister', cursive;
+  text-align: center;
+}
+
+#welcomeMessage{
+  background-color: #FAF0E6;
+  width: 50%;
+  margin: 0 auto;
+  padding: 10px;
+  border: 5px dashed white;
+  border-radius: 10px;
+  font-family: sans-serif;
+  font-size: small;
+}
+
+section{
+  background-color: #F0F8FF;
+  border: 2px solid white;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 3px;
+}
+
+.likeButton{
+  background-color: #4682B4;
+  border: 1px solid #4682B4;
+  border-radius: 8px;
+  color: white;
+}
+
+.likeButton:hover{
+  background-color: white;
+  border: 1px solid white;
+  border-radius: 8px;
+  color: #4682B4;
+}

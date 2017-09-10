@@ -1,6 +1,25 @@
 <header>
-  <a href="./trending">Trending Gabbit</a> |
-  <a href="./newgab">Create A New Gab</a> |
-  <a href="./login">Log In</a> |
-  <a href="./register">Sign Up</a>
+  {{#bigfoot}}
+    <form action="./newgab">
+      <input type="Submit" value="Create New Gab" />
+    </form>
+
+    <form action="./trending">
+      <input type="Submit" value="Trending Gabbit" />
+    </form>
+
+    <form method="POST" action="/logout">
+      <button>Log Out</button>
+    </form>
+  {{/bigfoot}}
+
+  {{^bigfoot}}
+    <form action="./register">
+      <input type="Submit" value="Sign Up" />
+    </form>
+
+    <form action="./login">
+      <input type="Submit" value="Log In" />
+    </form>
+  {{/bigfoot}}
 </header>

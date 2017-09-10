@@ -8,9 +8,9 @@ const server = express();
 
 server.engine('mustache', mustache());
 // TODO: Change the views folder to a public or static folder for semantic's sake
-server.set('views', './views');
+server.set('views', './views'); // This is for all your mustache pages
 server.set('view engine', 'mustache');
-server.use(express.static("views"));
+server.use(express.static("public")); // this will look for the css file
 server.use(bodyparser.urlencoded({ extended: true }));
 server.use(session({
     secret: 'gameofthrone_NEVERdies384764',
